@@ -1,21 +1,21 @@
-import { getAuth } from 'firebase/auth';
-import React from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
-import { AuthContext } from '../../../Context/Authprovider/Authprovider';
-import app from '../../../firebase.init';
+import React, { useState } from 'react';
+import { FaDragon } from 'react-icons/fa';
 
-const Login = () => {
-    const auth = getAuth(app)
-    const Signin = () => {
-        const { emailLogin } = useContext(AuthContext);
-    }
-    const [ userData, setUserData] = useState({email:"", password:""})
-    const handleEmailChange=(e) => {
+const Register = () => {
+    
+
+    const [userData, setUserData] = useState({ email: "", password: "" })
+    const [errMassage, setErrMassage] = useState({ email: "", password: "" })
+    const handleEmailChange = (e) => {
         const mail = e.target.value;
         // console.log(email);
-        setUserData({ ...userData, email: mail })
-        // console.log(userData)
+        if (!/\S+@\S+\.\S+/.test(mail)) {
+            setErrMassage({...errMassage, email:"Please use valid email"})   
+        }
+        else {
+            setUserData({ ...userData, email: mail })
+            // console.log(userData)
+        }
     }
     const handlePassChange = (e) => {
         const pass = e.target.value;
@@ -32,19 +32,38 @@ const Login = () => {
         const password = userData.password
         console.log(password);
         // console.log(userData);
-        
-               
-    }
 
+
+    }
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col ">
                     <div className="text-center ">
-                        <h1 className="text-5xl font-bold">Login now!</h1>                        
+                        <h1 className="text-5xl font-bold">Register Here!</h1>
                     </div>
                     <form onSubmit={submitFunction} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Full Name</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name='name'
+                                    placeholder="Your full name"
+                                    className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name='photoUrl'
+                                    placeholder="Image URL here"
+                                    className="input input-bordered" required />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -55,6 +74,7 @@ const Login = () => {
                                     name='email'
                                     placeholder="email"
                                     className="input input-bordered" required />
+                                {setErrMassage?.email && <p className='text-red-600'><FaDragon />{ errMassage.email}</p>}
 
                             </div>
                             <div className="form-control">
@@ -67,7 +87,7 @@ const Login = () => {
                                     name='password'
                                     placeholder="password"
                                     className="input input-bordered" required />
-                                
+
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -83,4 +103,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Course from "../Components/Course";
 import Home from "../Components/Home/Home";
 import Login from "../Components/UserLogin/Login/Login";
+import Register from "../Components/UserLogin/Register/Register";
 import Signup from "../Components/UserLogin/Signup/Signup";
 import Main from "../Layouts/Main";
 
@@ -21,8 +22,12 @@ import Main from "../Layouts/Main";
              element:<Home/>
              },
              {
-             path: '/register',
+             path: '/signup',
              element:<Signup/>
+             },
+             {
+             path: '/mailregister',
+             element:<Register/>
              },
              {
              path: '/login',
