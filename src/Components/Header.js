@@ -19,13 +19,14 @@ const Header = () => {
                         <li><Link to='/home'>Home</Link></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
+                    <li><Link to='/home'>Home</Link></li>
                     <li><Link to='/courses'>Courses</Link></li>
                     
-                    <li><Link to='/home'>Home</Link></li>
+                    <li><Link to='/blog'>Blog</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">

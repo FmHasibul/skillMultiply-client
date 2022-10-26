@@ -1,5 +1,6 @@
 
 import { createBrowserRouter } from "react-router-dom";
+import Blog from "../Components/Blog/Blog";
 import Course from "../Components/Course";
 import Home from "../Components/Home/Home";
 import Login from "../Components/UserLogin/Login/Login";
@@ -20,6 +21,10 @@ import Main from "../Layouts/Main";
              {
              path: '/home',
              element:<Home/>
+             },
+             {
+             path: '/blog',
+             element:<Blog/>
              },
              {
              path: '/signup',
