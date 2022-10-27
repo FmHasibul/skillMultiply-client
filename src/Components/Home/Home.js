@@ -30,7 +30,7 @@ const Home = () => {
                    
                     <div className="card glass shadow-md bg-white rounded-md">
                         <figure className="pt-10">
-                            <img src={img1} alt="Shoes" className="rounded-xl" />
+                            <img src={img1} alt="photos" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center pb-20">
                             <h2 className="card-title text-4xl font-bold mb-8">Best for you</h2>
@@ -42,7 +42,7 @@ const Home = () => {
                     
                     <div className="card glass shadow-md bg-white rounded-md">
                         <figure className="pt-10">
-                            <img src={img2} alt="Shoes" className="rounded-xl" />
+                            <img src={img2} alt="photos" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center pb-20">
                             <h2 className="card-title text-4xl font-bold mb-8">Never Hesitate</h2>
@@ -54,7 +54,7 @@ const Home = () => {
                     
                     <div className="card glass shadow-md bg-white rounded-md">
                         <figure className="pt-10">
-                            <img src={img3} alt="Shoes" className="rounded-xl" />
+                            <img src={img3} alt="photos" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center pb-20">
                             <h2 className="card-title text-4xl font-bold mb-8">Tailored to you</h2>
@@ -65,7 +65,7 @@ const Home = () => {
                     </div>
                     
                     <div className="card glass lg:card-side bg-white shadow-md rounded-md col-span-2 grid md:grid-cols-2">
-                        <figure><img src={img4} alt="Album" /></figure>
+                        <figure><img src={img4} alt="photos" /></figure>
                         <div className="flex flex-col sm:text-center md:text-right gap-6 self-center">
                             <h2 className="text-4xl font-bold">Learning on the go</h2>
                             <p>Learn on the web or on the go. <span className='text-xl font-semibold'>Skill <span className='text-green-600'>Multiply</span></span> is always ready for you and you'll never lose your
@@ -85,7 +85,7 @@ const Home = () => {
                     
                     <div className="card glass bg-base-100 shadow-md bg-white rounded-md">
                         <figure className="pt-10">
-                            <img src={img2} alt="Shoes" className="rounded-xl" />
+                            <img src={img5} alt="photos" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center pb-20">
                             <h2 className="card-title text-4xl font-bold mb-8">We are here for you</h2>
@@ -104,14 +104,14 @@ const Home = () => {
                     <h1 className="w-2/4 mx-auto text-5xl font-bold mb-28">The perfect platform to boost your technical skills</h1>
                     <div className="aspects lg:flex gap-8">
                         <div className="students glass flex flex-col gap-8 basis-1/2">
-                            <img src={student} alt="students"/>
+                            <img src={student} alt="photosnts"/>
                                 <h2 className="text-4xl font-bold">Students</h2>
                                 <p className="text-xl text-slate-500 w-4/6 mx-auto">Prepping for the big test or want to ace your first
                                 interview? Use <span className='text-xl font-semibold'>Skill <span className='text-green-600'>Multiply</span></span>'s real-world practice to reinforce what you've learned and get you
                                     ready for that big moment.</p>
                         </div>
                         <div className="professionals glass flex flex-col gap-8 basis-1/2">
-                            <img src={professional} alt="professionals"/>
+                            <img src={professional} alt="photosssionals"/>
                                 <h2 className="text-4xl font-bold">Professionals</h2>
                                 <p className="text-xl text-slate-500 w-4/6 mx-auto">You can learn something totally new to advance your
                                 career. Or maybe you just want to knock off the rust. Try <span className='text-xl font-semibold'>Skill <span className='text-green-600'>Multiply</span></span> to get access to a variety

@@ -51,8 +51,8 @@ const Header = () => {
                             <li >
                                 <button onClick={handleLogout} className="  rounded px-5 py-1">Log  Out</button>
                             </li>
-                            <li data-tip="hello" className="w-16 tooltip tooltip-bottom rounded-full">
-                                <img src={user?.photoURL} />
+                            <li data-tip={user?.displayName} className="w-16 tooltip tooltip-bottom rounded-full">
+                                <img src={user?.photoURL} alt="DP"/>
                             </li>
                         </>
                         :
