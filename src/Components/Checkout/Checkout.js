@@ -5,11 +5,11 @@ const Checkout = () => {
 
     const info = useLoaderData()
     console.log(info);
-    const { id, name, title, details, logo, instructor, learner } = info;
+    const { id, name,  } = info;
 
     return (
-        <div className='container mx-auto bg-gray-300'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <div className='container flex rounded-3xl mx-auto h-96 bg-gray-300'>
+            <div className="card w-96 glass mx-auto my-auto shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p>We appritiet your choice , Wish You all the best</p>
