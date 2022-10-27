@@ -3,13 +3,16 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/Authprovider/Authprovider';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate, useLocation} from 'react-router-dom'
 
 const Login = () => {
     const { emailLogin } = useContext(AuthContext)    
     const [error, setError] = useState('')
     const navigate = useNavigate()
+    const location = useLocation()
     
+    const from = location.state?.from?.pathname || '/home'
+
     const submitFunction = (event) => {
         event.preventDefault();
          const form = event.target
@@ -25,6 +28,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
+                navigate(from, { replace: true });
             })
             .catch(e => setError('Email Or Password is not matching'))
         

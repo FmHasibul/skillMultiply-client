@@ -67,7 +67,7 @@ const Header = () => {
                         
                     }
                     
-                    <div onClick={themeHandle} className="form-control">     
+                    <div onClick={themeHandle} className="form-control align-middle ">     
                         {
                             theme ? <p className='ms-1'>Dark</p> : <p >Light</p>
                         }                            
