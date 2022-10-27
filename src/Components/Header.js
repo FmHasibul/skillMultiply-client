@@ -7,8 +7,13 @@ import image from '../mylogo.png'
 
 const Header = () => {
     const [theme, setTheme] = useState(false)
-    const { user } = useContext(AuthContext)
-    // console.log(user)
+    const { user, LogOut } = useContext(AuthContext)
+    console.log(user?.photoURL)
+    const handleLogout = () => {
+        LogOut()
+            .then(() => { })
+        .catch((e) => (console.error('Mistake: ',e)))
+    }
     const themeHandle = () => {
         setTheme(dark => !dark)
         console.log(theme)
@@ -40,22 +45,36 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <ul className='menu menu-horizontal'>
-                    <li>
-                        <Link to='/signup' className="  rounded-3xl ">Sign Up</Link>
-                    </li>
-                    <li>
-                        <Link to='/login' className="  rounded-3xl px-5 py-1">Login</Link>
-                    </li>
-                    <div onClick={themeHandle} className="form-control">                      
-                            
+                <div className='menu lg:menu-horizontal'>
+                    {user?.uid ?
+                        <>
+                            <li >
+                                <button onClick={handleLogout} className="  rounded px-5 py-1">Log  Out</button>
+                            </li>
+                            <li data-tip="hello" className="w-16 tooltip tooltip-bottom rounded-full">
+                                <img src={user?.photoURL} />
+                            </li>
+                        </>
+                        :
+                        <>
+                            <li  >
+                                <Link to='/signup' className="rounded-3xl " >Sign Up</Link>
+                            </li>
+                            <li>
+                                <Link to='/login' className="  rounded-3xl px-5 py-1">Login</Link>
+                            </li>
+                        </>
+                        
+                    }
+                    
+                    <div onClick={themeHandle} className="form-control">     
                         {
                             theme ? <p className='ms-1'>Dark</p> : <p >Light</p>
                         }                            
                      <input type="checkbox" className="toggle ms-2"  />
                        
                     </div>
-                </ul>
+                </div>
             </div>
         </div>
     );
