@@ -34,6 +34,8 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/courses'>Courses</Link></li>
                         <li><Link to='/home'>Home</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/faq'>FAQ</Link></li>
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl">Skill <span className='text-green-400'>Multiply</span></Link>
@@ -43,6 +45,7 @@ const Header = () => {
                     <li><Link to='/home'>Home</Link></li>
                     <li><Link to='/courses'>Courses</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
+                    <li><Link to='/faq'>FAQ</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
@@ -52,8 +55,17 @@ const Header = () => {
                             <li >
                                 <button onClick={handleLogout} className="  rounded px-5 py-1">Log  Out</button>
                             </li>
-                            <li data-tip={user?.displayName} className="w-16 tooltip tooltip-bottom rounded-full">
-                                <img src={user?.photoURL} alt="DP"/>
+                            <li  className=" rounded-full">
+                                {user?.photoURL ? 
+                                    <div data-tip={user?.displayName} className="w-16 tooltip tooltip-bottom rounded-full">
+                                        <img className='rounded-full' src={user?.photoURL} alt="DP"/>
+                                    </div>
+                                    
+                                    :
+                                    <div data-tip={user?.displayName} className="w-16 tooltip tooltip-bottom rounded-full">
+                                        <FaUserAlt />
+                                    </div>
+                                }
                             </li>
                         </>
                         :

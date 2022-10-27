@@ -5,6 +5,7 @@ import Checkout from "../Components/Checkout/Checkout";
 import Course from "../Components/Course";
 import CouresDetails from "../Components/courseDetails/CouresDetails";
 import ErrorRoute from "../Components/ErrorRoute/ErrorRoute";
+import Faq from "../Components/FAQ/Faq";
 import Home from "../Components/Home/Home";
 import Login from "../Components/UserLogin/Login/Login";
 import PrivetRout from "../Components/UserLogin/PrivetRoute/PrivetRout";
@@ -33,6 +34,10 @@ import Main from "../Layouts/Main";
              {
              path: '/blog',
              element:<Blog/>
+             },
+             {
+             path: '/faq',
+             element:<Faq/>
              },
              {
              path: '/signup',
