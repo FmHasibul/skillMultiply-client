@@ -59,7 +59,7 @@ const Home = () => {
                         <div className="card-body items-center text-center pb-20">
                             <h2 className="card-title text-4xl font-bold mb-8">Tailored to you</h2>
                             <p className="text-xl text-slate-500">No matter your experience level, you'll be writing <span
-                                className="font-bold">Dont waste your time by random surffing</span>  start your first course.
+                                className="font-bold">Don't waste your time by random surfing</span>  start your first course.
                             </p>
                         </div>
                     </div>
@@ -71,11 +71,11 @@ const Home = () => {
                             <p>Learn on the web or on the go. <span className='text-xl font-semibold'>Skill <span className='text-green-600'>Multiply</span></span> is always ready for you and you'll never lose your
                                 place.</p>
                             <div className="flex mb-5 mx-auto gap-8">
-                                <a href="#">
+                                <a href="play.google.com">
                                     <FaGooglePlay className='hover:text-green-700' />
                                     
                                 </a>
-                                <a href="#">
+                                <a href="apple.com">
                                     <FaAppStoreIos className='hover:text-green-700' />
                                 </a>
 
@@ -83,13 +83,13 @@ const Home = () => {
                         </div>
                     </div>
                     
-                    <div className="card glass bg-base-100 shadow-md bg-white rounded-md">
+                    <div className="card glass bg-base-100 shadow-md  rounded-md">
                         <figure className="pt-10">
                             <img src={img5} alt="photos" className="rounded-xl" />
                         </figure>
                         <div className="card-body items-center text-center pb-20">
                             <h2 className="card-title text-4xl font-bold mb-8">We are here for you</h2>
-                            <p className="text-xl text-slate-500">Start Learning from scrach . You will reach  on Mounten Top<span
+                            <p className="text-xl text-slate-500">Start Learning from scratch . You will reach  on Mountain Top<span
                                 className="font-bold">real, journey starts within minutes</span> Do it now .
                             </p>
                         </div>

@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../Context/Authprovider/Authprovider';
 import image from '../mylogo.png'
+import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
     const [theme, setTheme] = useState(false)
@@ -23,7 +24,7 @@ const Header = () => {
             <div className="navbar-start">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img src={image} />
+                        <img src={image} alt='logo'/>
                     </div>
                 </label>
                 <div className="dropdown">
