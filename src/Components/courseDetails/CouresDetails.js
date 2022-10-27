@@ -19,8 +19,9 @@ const CouresDetails = () => {
                         <p>Instructor : {instructor}</p>
                         <p>Running student : {learner}</p>
                     </div>
-                    <div className="card-actions justify-center">
-                        <Link to={`/checkout/${id}`}><button className="btn glass btn-wide m-0 ">Get Premium Acsess</button></Link>
+                    <div className="card-actions justify-around">
+                        <div><button className="btn glass bg-indigo-500 btn-wide m-0 ">Download</button></div>
+                        <div><Link to={`/checkout/${id}`}><button className="btn glass bg-green-400 text-slate-600 btn-wide m-0 ">Get Premium Acsess</button></Link></div>
                     </div>
                     
                 </div>

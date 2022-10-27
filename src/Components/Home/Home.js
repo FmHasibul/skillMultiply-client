@@ -8,6 +8,7 @@ import img4 from '../asset/card-4.svg'
 import img5 from '../asset/card-5.svg'
 import student from '../asset/students.svg'
 import professional from '../asset/professionals.svg'
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -21,7 +22,7 @@ const Home = () => {
                     <p>Courses designed by experts with real-world practice.</p>
                     <p>Join our global community. <span className="font-bold">It's free.</span></p>
                 </div>
-                <button className="btn btn-wide btn-info rounded-md hover:bg-sky-700">Start Learning Now</button>
+                <Link to='/courses'><button className="btn btn-wide btn-info rounded-md hover:bg-sky-700">Start Learning Now</button></Link>
             </div>
             {/* info  */}
             <div  className="pb-24 bg-gray-300">

@@ -1,3 +1,4 @@
+import { fromJSON } from 'postcss';
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaDragon } from 'react-icons/fa';
@@ -5,7 +6,7 @@ import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 
 const Register = () => {
     
-    const {createUser} = useContext(AuthContext)
+    const { createUser, userProfileInfo } = useContext(AuthContext)
 
     const [userData, setUserData] = useState({ email: "", password: "" })
     const [errMassage, setErrMassage] = useState({ email: "", password: "" })
@@ -49,11 +50,20 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                event.target.reset()
+                addUserProfileInfo(name, photo)
 
             })
         .catch(e=> console.error('error', e))
-
-
+    }
+    const addUserProfileInfo = (name, photo) => {
+       const profile = {
+            displayName: name,
+            photoURL: photo,
+        }
+        userProfileInfo(profile)
+            .then(() => { })
+        .catch((e) => console.log(e))
     }
     return (
         <div className='mb-16 container mx-auto rounded'>

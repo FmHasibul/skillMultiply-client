@@ -23,6 +23,10 @@ import Main from "../Layouts/Main";
              element:<Course/>
              },
              {
+             path: '/',
+             element:<Home/>
+             },
+             {
              path: '/home',
              element:<Home/>
              },
