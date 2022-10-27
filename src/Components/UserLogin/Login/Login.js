@@ -1,37 +1,28 @@
 import { getAuth } from 'firebase/auth';
+import { Result } from 'postcss';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/Authprovider/Authprovider';
-import app from '../../../firebase.init';
+
 
 const Login = () => {
-    const auth = getAuth(app)
-    const Signin = () => {
-        const { emailLogin } = useContext(AuthContext);
-    }
-    const [ userData, setUserData] = useState({email:"", password:""})
-    const handleEmailChange=(e) => {
-        const mail = e.target.value;
-        // console.log(email);
-        setUserData({ ...userData, email: mail })
-        // console.log(userData)
-    }
-    const handlePassChange = (e) => {
-        const pass = e.target.value;
-        // console.log(password);
-        setUserData({ ...userData, password: pass })
-        // setUserData(pass)
-        // console.log('pass=',userData)
-    }
-
+    const { emailLogin } = useContext(AuthContext)    
+    const [ error , setError] = useState('')
     const submitFunction = (event) => {
         event.preventDefault();
-        const email = userData.email
-        // console.log('mail',email);
-        const password = userData.password
-        console.log(password);
+         const form = event.target
+        const email = form.email.value;
+        
+        const password = form.password.value;
+        console.log(email, password);
         // console.log(userData);
+        emailLogin(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('')
+        }).catch(e => setError('Email Or Password is not matching'))
         
                
     }
@@ -49,8 +40,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input
-                                    onChange={handleEmailChange}
+                                <input                                    
                                     type="email"
                                     name='email'
                                     placeholder="email"
@@ -62,14 +52,13 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input
-                                    onChange={handlePassChange}
                                     type="password"
                                     name='password'
                                     placeholder="password"
                                     className="input input-bordered" required />
                                 
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <a href="#" className="label-text-alt text-red-600 link link-hover">{error}</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

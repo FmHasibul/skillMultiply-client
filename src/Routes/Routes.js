@@ -2,6 +2,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Components/Blog/Blog";
 import Course from "../Components/Course";
+import CouresDetails from "../Components/courseDetails/CouresDetails";
 import Home from "../Components/Home/Home";
 import Login from "../Components/UserLogin/Login/Login";
 import Register from "../Components/UserLogin/Register/Register";
@@ -37,6 +38,11 @@ import Main from "../Layouts/Main";
              {
              path: '/login',
              element:<Login/>
+             },
+             {
+                 path: '/courses/:id',
+                 loader: ({ params }) => fetch(`https://asten-server.vercel.app/courses/${params.id}`),
+                 element:<CouresDetails/>
              },
              
          ],         

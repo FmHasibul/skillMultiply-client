@@ -6,20 +6,17 @@ export const DataContext = createContext()
 const DataProvider = ({ children }) => {
 
     const [datas, setDatas] = useState([])
-
+    // https://asten-server.vercel.app/courses
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`https://asten-server.vercel.app/courses`);
-            const newData = await response.json();
-            console.log(newData);
-            setDatas(newData)
-        };
+        fetch('https://asten-server.vercel.app/courses')
+            .then(res => res.json())
+        .then(data => setDatas(data))
 
         // fetchData();
-    });
+    },[]);
     
-    const name = { name: 'hasib' };
-    const data ={name, }
+    
+    const data ={datas, setDatas }
     
     return (
         <DataContext.Provider value={data}>
