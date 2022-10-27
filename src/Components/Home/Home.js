@@ -26,7 +26,7 @@ const Home = () => {
             </div>
             {/* info  */}
             <div  className="pb-24 bg-gray-300">
-                <div className="container mx-auto pt-20 grid grid-cols-3 gap-8">
+                <div className="container mx-auto pt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                    
                     <div className="card glass shadow-md bg-white rounded-md">
                         <figure className="pt-10">
@@ -64,13 +64,13 @@ const Home = () => {
                         </div>
                     </div>
                     
-                    <div className="card glass lg:card-side bg-white shadow-md rounded-md col-span-2 grid grid-cols-2">
+                    <div className="card glass lg:card-side bg-white shadow-md rounded-md col-span-2 grid md:grid-cols-2">
                         <figure><img src={img4} alt="Album" /></figure>
-                        <div className="flex flex-col gap-6 self-center">
+                        <div className="flex flex-col sm:text-center md:text-right gap-6 self-center">
                             <h2 className="text-4xl font-bold">Learning on the go</h2>
                             <p>Learn on the web or on the go. <span className='text-xl font-semibold'>Skill <span className='text-green-600'>Multiply</span></span> is always ready for you and you'll never lose your
                                 place.</p>
-                            <div className="flex gap-8">
+                            <div className="flex mb-5 mx-auto gap-8">
                                 <a href="#">
                                     <FaGooglePlay className='hover:text-green-700' />
                                     
@@ -96,6 +96,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+
             {/* Key aspect  */}
             <div className="bg-gray-300 py-24">
                 <div className="key-aspect container mx-auto text-center">

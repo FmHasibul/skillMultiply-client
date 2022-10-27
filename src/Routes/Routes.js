@@ -49,12 +49,12 @@ import Main from "../Layouts/Main";
              {
                  path: '/courses/:id',
                  loader: ({ params }) => fetch(`https://asten-server.vercel.app/courses/${params.id}`),
-                 element: <PrivetRout><CouresDetails /></PrivetRout>
+                 element: <CouresDetails />
              },
              {
                  path: '/checkout/:id',
                  loader: ({ params }) => fetch(`https://asten-server.vercel.app/courses/${params.id}`),
-                 element: <Checkout />
+                 element: <PrivetRout><Checkout /></PrivetRout>
              },
              
          ],         
